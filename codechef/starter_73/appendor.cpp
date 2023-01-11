@@ -29,27 +29,25 @@ int main()
         }
 
         int currBit = bitOr(a, n);
-
-        // check upto the numbers where the bit after the leftmost setbit is 1
-
-        int diff = y - currBit;
-        int count = 0;
-
-        int temparr[diff];
-        for (int i = 0; i < diff; i++)
+        
+        if(currBit == y)
         {
-            temparr[i] = currBit + i + 1;
+            cout<<0<<endl;
+            continue;
         }
+        
+        int diff = abs(currBit - y);
+        int count = 0;
+        
         for (int i = 0; i < diff; i++)
         {
-            if ((currBit | temparr[i]) == y)
+            if ((currBit | (currBit+i+1)) == y)
             {
                 count++;
             }
         }
-
-        (count == 0 && currBit != y) ? cout << -1 << endl : cout << count << endl;
-        cout<<endl;
-    }  
+        
+        count == 0 ? cout << -1 << endl : cout << count << endl;
+    }
     return 0;
 }
