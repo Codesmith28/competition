@@ -66,7 +66,7 @@ int main()
 
         sort(v.begin(), v.end());
 
-        if (v.size() == 2)
+        if (v.size() == 2 || v.size() == 3)
         {
             cout << -1 << endl;
             continue;

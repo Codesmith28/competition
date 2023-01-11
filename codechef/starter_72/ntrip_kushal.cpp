@@ -18,7 +18,7 @@ int powr(int a, int b)
     while (b > 0)
     {
         if ((b & 1) == 1)
-        {   
+        {
             ans = (ans * 1LL * a) % mod;
         }
         a = (a * 1LL * a) % mod;
