@@ -1,53 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int bitOr(long long arr[], int n)
-{
-    int ans = arr[0];
-    for (int i = 1; i < n; i++)
-    {
-        ans = (ans | arr[i]);
-    }
-    return ans;
-}
-
 int main()
 {
+
     int t;
     cin >> t;
-
     while (t--)
     {
-        int n;
-        long long y;
+        int n, y;
         cin >> n >> y;
-        long long a[n];
+        long arr[n], OR = 0;
+        bool flag = false;
 
         for (int i = 0; i < n; i++)
         {
-            cin >> a[i];
+            cin >> arr[i];
+            OR = OR | arr[i];
         }
 
-        int currBit = bitOr(a, n);
-        
-        if(currBit == y)
+        for (int j = 0; j <= y; j++)
         {
-            cout<<0<<endl;
-            continue;
-        }
-        
-        int diff = abs(currBit - y);
-        int count = 0;
-        
-        for (int i = 0; i < y; i++)
-        {
-            if ((currBit | (currBit+i+1)) == y)
+            if ((OR | j) == y)
             {
-                count++;
+                cout << j << endl;
+                flag = true;
+                break;
             }
         }
-        
-        count == 0 ? cout << -1 << endl : cout << count << endl;
+
+        if (!flag)
+        {
+            cout << "-1 \n";
+        }
     }
     return 0;
 }
