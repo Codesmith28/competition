@@ -39,7 +39,7 @@ int main()
         int diff = abs(currBit - y);
         int count = 0;
         
-        for (int i = 0; i < diff; i++)
+        for (int i = 0; i < y; i++)
         {
             if ((currBit | (currBit+i+1)) == y)
             {

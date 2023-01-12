@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 bool awesome(long long x,long long y,long long n)
 {
     int a = (n+x)%y;
