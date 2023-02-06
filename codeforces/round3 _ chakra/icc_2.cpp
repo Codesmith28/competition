@@ -41,7 +41,7 @@ int main()
     sort(nxtYr.begin(), nxtYr.end(), compidx);
     nxtYr[0].first += poi[0];
 
-    for (int i = 1; i < n; i++)-
+    for (int i = 1; i < n; i++)
     {
         nxtYr[i].first += poi[n - i];
     }

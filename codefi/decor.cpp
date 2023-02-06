@@ -30,13 +30,14 @@ int main()
         }
 
         sort(arr.begin(), arr.end(), [&fmap](int a, int b)
-             {
-             if (fmap[a] != fmap[b])
-             {
-                 return fmap[a] > fmap[b];
-             }
+        {
+            if (fmap[a] != fmap[b])
+            {
+                return fmap[a] > fmap[b];
+            }
 
-             return a < b; });
+            return a < b; 
+        });
 
         for (int i = 0; i < arr.size(); i++)
         {
